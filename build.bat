@@ -1,0 +1,1 @@
+rojo build -o ./build/VSC2RBX.rbxmx

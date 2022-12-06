@@ -1,0 +1,8 @@
+# Project place file
+/VSC2RBX.rbxlx
+
+# Build Files
+build/*
+
+# Modules
+node_modules/*
