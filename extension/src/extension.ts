@@ -1,10 +1,12 @@
+import * as os from "os";
 import * as vscode from "vscode";
 import * as http from "http";
+
 import axios from "axios";
 
 import { execSync } from "child_process";
-import { writeFileSync } from "fs";
 import { join } from "path";
+import { writeFileSync } from "fs";
 
 // Constants:
 const PORT = 9999; // I am waiting for the exhale
@@ -41,19 +43,20 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	}));
 
-	context.subscriptions.push(vscode.commands.registerCommand("vsc2rbx.installPlugin", async () => {
+	context.subscriptions.push(vscode.commands.registerCommand("vsc2rbx.plugin", () => {
 		vscode.window.showInformationMessage("Installing plugin...");
 		
 		const current_dir = __dirname;
 
-		execSync("cd %LOCALAPPDATA%\\Roblox Studio\\Plugins");
-
-		const response = await axios.get("https://pastebin.com/raw/2ug0CwaL");
-
-		writeFileSync(join(__dirname, "VSC2RBX.rbxmx"), response.data);
-		execSync(`cd ${current_dir}`);
-
-		vscode.window.showInformationMessage("Plugin installed!");
+		axios.get("https://pastebin.com/raw/2ug0CwaL").then((response) => {
+			writeFileSync(`${os.homedir}\\AppData\\Local\\Roblox\\Plugins\\VSC2RBX.rbxmx`, response.data);
+			execSync(`cd ${current_dir}`);
+	
+			vscode.window.showInformationMessage("Plugin installed!");
+		}).catch((error) => {
+			vscode.window.showErrorMessage("Failed to install plugin!");
+			console.log(error);
+		});
 	}));
 
 	context.subscriptions.push(vscode.commands.registerCommand("vsc2rbx.activate", () => {

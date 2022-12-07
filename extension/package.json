@@ -3,7 +3,7 @@
   "displayName": "VSC2RBX",
   "description": "VSC2RBX allows scripts from VSCode to be used in roblox studio!",
   "publisher": "HeartsRust",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.73.0"
   },
@@ -17,6 +17,8 @@
   ],
   "activationEvents": [
     "onCommand:vsc2rbx.activate",
+    "onCommand:vsc2rbx.execute",
+    "onCommand:vsc2rbx.plugin",
     "onLanguage:lua"
   ],
   "main": "./out/extension.js",
@@ -31,7 +33,7 @@
         "title": "VSC2RBX Execute"
       },
       {
-        "command": "vsc2rbx.installPlugin",
+        "command": "vsc2rbx.plugin",
         "title": "VSC2RBX Plugin Installation"
       }
     ]
