@@ -1,6 +1,5 @@
 -- Services:
 local HttpService = game:GetService("HttpService")
-local TestService = game:GetService("TestService")
 
 -- Modules:
 local loadstring = {}
@@ -3299,8 +3298,8 @@ CLOSE CLOSURE VARARG
 			while true do
 				local inst = code[pc]
 				local op = inst[op_index]
-				pc = pc + 1			
-				
+				pc = pc + 1
+
 				if op < 18 then
 					if op < 8 then
 						if op < 3 then
@@ -3810,8 +3809,8 @@ CLOSE CLOSURE VARARG
 
 				local state = { vararg = vararg, memory = memory, code = proto.code, subs = proto.subs, pc = 1 }
 
-				local result = table.pack(pcall(run_lua_func, state, env, upval))			
-				
+				local result = table.pack(pcall(run_lua_func, state, env, upval))
+
 				if result[1] then
 					return table.unpack(result, 2, result.n)
 				else
@@ -3826,7 +3825,7 @@ CLOSE CLOSURE VARARG
 			return wrapped
 		end
 
-		FiOne = function(bytecode, env)			
+		FiOne = function(bytecode, env)
 			return lua_wrap_state(lua_bc_to_state(bytecode), env or top_env)
 		end
 	end
@@ -3858,7 +3857,7 @@ end
 
 -- Constants:
 local URL = "http://localhost:9999/api/receive"
-local REFRESH = 0.5
+local REFRESH = 0.1
 
 -- Private Functions:
 local function IsHttpEnabled(init: boolean?)

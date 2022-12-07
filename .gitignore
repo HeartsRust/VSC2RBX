@@ -4,5 +4,9 @@
 # Build Files
 build/*
 
-# Modules
-node_modules/*
+# Extension
+out
+dist
+node_modules
+.vscode-test/
+*.vsix

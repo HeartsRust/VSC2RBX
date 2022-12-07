@@ -29,7 +29,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.commands.registerCommand("vsc2rbx.execute", () => {
 		const editor = vscode.window.activeTextEditor;
 
-		if (editor) {
+		if (editor && editor.document.languageId == "lua") {
 			const document = editor.document;
 			const text = document.getText();
 			queue.push(text);

@@ -2,9 +2,15 @@
   "name": "vsc2rbx",
   "displayName": "VSC2RBX",
   "description": "VSC2RBX allows scripts from VSCode to be used in roblox studio!",
-  "version": "0.0.1",
+  "publisher": "HeartsRust",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.73.0"
+  },
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HeartsRust/VSC2RBX.git"
   },
   "categories": [
     "Other"

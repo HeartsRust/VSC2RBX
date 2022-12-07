@@ -1,15 +1,9 @@
 {
   "name": "VSC2RBX",
   "tree": {
-    "$className": "DataModel",
-
-    "ServerScriptService": {
-      "VSC2RBX": {
-        "$className": "Folder",
-        "Main": {
-          "$path": "source/main"
-        }
-      }
+    "$className": "Folder",
+    "Main": {
+      "$path": "source/main"
     }
   }
 }
