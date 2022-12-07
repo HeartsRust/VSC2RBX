@@ -3876,7 +3876,6 @@ end
 IsHttpEnabled(true)
 
 while not IsHttpEnabled() do
-	print("AHHH")
 	task.wait(1)
 end
 
