@@ -3887,7 +3887,7 @@ while true do
 	if success and response ~= "" then
 		local ran, error = pcall(function()
 			local f = loadstring(response)
-			f()
+			task.spawn(f)
 		end)
 
 		if not ran then
