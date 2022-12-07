@@ -3886,8 +3886,15 @@ while true do
 
 	if success and response ~= "" then
 		local ran, error = pcall(function()
-			local f = loadstring(response)
-			task.spawn(f)
+			-- We don't errors to be displayed in the console, so we wrap it in a pcall.
+			local success, response = pcall(function()
+				local f = loadstring(response)
+				f()
+			end)
+
+			if not success then
+				warn("[VSC2RBX]: Failed to execute script. This is most likely due to a syntax error.")
+			end
 		end)
 
 		if not ran then
