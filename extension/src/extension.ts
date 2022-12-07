@@ -1,5 +1,10 @@
 import * as vscode from "vscode";
 import * as http from "http";
+import axios from "axios";
+
+import { execSync } from "child_process";
+import { writeFileSync } from "fs";
+import { join } from "path";
 
 // Constants:
 const PORT = 9999; // I am waiting for the exhale
@@ -34,6 +39,21 @@ export function activate(context: vscode.ExtensionContext) {
 			const text = document.getText();
 			queue.push(text);
 		}
+	}));
+
+	context.subscriptions.push(vscode.commands.registerCommand("vsc2rbx.installPlugin", async () => {
+		vscode.window.showInformationMessage("Installing plugin...");
+		
+		const current_dir = __dirname;
+
+		execSync("cd %LOCALAPPDATA%\\Roblox Studio\\Plugins");
+
+		const response = await axios.get("https://pastebin.com/raw/2ug0CwaL");
+
+		writeFileSync(join(__dirname, "VSC2RBX.rbxmx"), response.data);
+		execSync(`cd ${current_dir}`);
+
+		vscode.window.showInformationMessage("Plugin installed!");
 	}));
 
 	context.subscriptions.push(vscode.commands.registerCommand("vsc2rbx.activate", () => {

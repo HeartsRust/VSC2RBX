@@ -24,11 +24,15 @@
     "commands": [
       {
         "command": "vsc2rbx.activate",
-        "title": "VSCode to Roblox Activate"
+        "title": "VSC2RBX Activate"
       },
       {
         "command": "vsc2rbx.execute",
-        "title": "VSCode to Roblox Execute"
+        "title": "VSC2RBX Execute"
+      },
+      {
+        "command": "vsc2rbx.installPlugin",
+        "title": "VSC2RBX Plugin Installation"
       }
     ]
   },
@@ -41,16 +45,19 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.73.0",
     "@types/glob": "^8.0.0",
     "@types/mocha": "^10.0.1",
-    "@types/node": "16.x",
+    "@types/node": "^16.18.6",
+    "@types/vscode": "^1.73.0",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
     "eslint": "^8.28.0",
     "glob": "^8.0.3",
     "mocha": "^10.1.0",
-    "typescript": "^4.9.3",
-    "@vscode/test-electron": "^2.2.0"
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "axios": "^1.2.1"
   }
 }

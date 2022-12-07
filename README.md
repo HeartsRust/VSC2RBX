@@ -3,14 +3,8 @@ VSC2RBX is an extension that allows you to execute code from VSCode in Roblox St
 
 ## Installation
 1. Install the extension from the VSCode Marketplace.
-2. Build the plugin using the instructions below.
-
-```bash
-start build
-```
-
-3. Open Roblox Studio and go to Plugins > Manage Plugins > Open Plugins Folder.
-4. Drag the built plugin into the folder that opens.
+2. To install the latest version of the plugin use the `VSC2RBX Plugin Install` command
+3. Enable HttpRequests by going to `Settings > Security > Allow Http Requests` and set it to `true`.
 
 ## Usage
 1. If it's your first time using the extension you're gonna need to activate the extension you can activate the extension by pressing `Ctrl + Shift + P` and typing `VSCode to Roblox Activate`.

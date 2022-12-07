@@ -1,5 +1,6 @@
 -- Services:
 local HttpService = game:GetService("HttpService")
+local RunService = game:GetService("RunService")
 
 -- Modules:
 local loadstring = {}
@@ -3873,6 +3874,10 @@ local function IsHttpEnabled(init: boolean?)
 end
 
 -- Init:
+if RunService:IsRunning() then --> We don't want to run this while players are playing.
+	return
+end
+
 IsHttpEnabled(true)
 
 while not IsHttpEnabled() do
