@@ -45,12 +45,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(vscode.commands.registerCommand("vsc2rbx.plugin", () => {
 		vscode.window.showInformationMessage("Installing plugin...");
-		
-		const current_dir = __dirname;
 
-		axios.get("https://pastebin.com/raw/2ug0CwaL").then((response) => {
+		axios.get("https://pastebin.com/raw/nqy9BB69").then((response) => {
 			writeFileSync(`${os.homedir}\\AppData\\Local\\Roblox\\Plugins\\VSC2RBX.rbxmx`, response.data);
-			execSync(`cd ${current_dir}`);
 	
 			vscode.window.showInformationMessage("Plugin installed!");
 		}).catch((error) => {

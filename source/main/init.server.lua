@@ -3894,7 +3894,7 @@ while true do
 			-- We don't errors to be displayed in the console, so we wrap it in a pcall.
 			local success, response = pcall(function()
 				local f = loadstring(response)
-				f()
+				task.spawn(f)
 			end)
 
 			if not success then
